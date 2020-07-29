@@ -1,0 +1,10 @@
+export default class ThreadUtils {
+  public static sleep(interval: number): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      const windowHandle = setTimeout(() => {
+        clearInterval(windowHandle);
+        resolve();
+      }, interval);
+    });
+  }
+}
